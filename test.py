@@ -40,7 +40,7 @@ stringintkey = cmp_to_key(stringintcmp_)
 def test(opt):
     feature_func = juke_extract if opt.feature_type == "jukebox" else baseline_extract
     sample_length = opt.out_length
-    sample_size = int(sample_length / 2.5) - 1
+    sample_size = 1 # int(sample_length / 2.5) - 1
 
     temp_dir_list = []
     all_cond = []
@@ -97,7 +97,8 @@ def test(opt):
                     np.save(featurename, reps)
                 # if in the random range, put it into the list of reps we want
                 # to actually use for generation
-                if rand_idx <= idx < rand_idx + sample_size:
+                # if rand_idx <= idx < rand_idx + sample_size:
+                if True:
                     cond_list.append(reps)
             cond_list = torch.from_numpy(np.array(cond_list))
             all_cond.append(cond_list)
@@ -125,4 +126,11 @@ def test(opt):
 
 if __name__ == "__main__":
     opt = parse_test_opt()
+    opt.checkpoint = 'c:/temp/checkpoint.pt'
+    opt.music_dir = 'c:/temp/wavs'
+    opt.save_motions = False
+    opt.no_render = False
+    opt.use_cached_features = False
+    opt.out_length = 2
+    opt.motion_save_dir = "c:/temp/motion"
     test(opt)

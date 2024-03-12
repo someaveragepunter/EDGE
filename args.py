@@ -94,5 +94,6 @@ def parse_test_opt():
         default="cached_features/",
         help="Where to save/load the features",
     )
-    opt = parser.parse_args()
+    opt = parser.parse_args() # parse_known_args
+
     return opt

@@ -34,11 +34,11 @@ def getArg():
 
 if __name__ == "__main__":
     args = getArg()
-    input_dir = args.input_dir
+    input_dir = 'c:/temp/motion' # args.input_dir
+    smplObjects = SmplObjects(input_dir)
+
     fbx_source_path = args.fbx_source_path
     output_dir = args.output_dir
-
-    smplObjects = SmplObjects(input_dir)
     for pkl_name, smpl_params in tqdm(smplObjects):
         try:
             fbxReadWrite = FbxReadWrite(fbx_source_path)
