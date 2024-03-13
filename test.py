@@ -40,7 +40,7 @@ stringintkey = cmp_to_key(stringintcmp_)
 def test(opt):
     feature_func = juke_extract if opt.feature_type == "jukebox" else baseline_extract
     sample_length = opt.out_length
-    sample_size = int(sample_length / 2.5) - 1
+    sample_size = max(1, int(sample_length / 2.5) - 1)
 
     temp_dir_list = []
     all_cond = []
@@ -125,4 +125,11 @@ def test(opt):
 
 if __name__ == "__main__":
     opt = parse_test_opt()
+    # opt.checkpoint = 'checkpoint.pt'
+    opt.music_dir = 'inputs/wavs'
+    opt.no_render = False
+    # opt.use_cached_features = False
+    # opt.save_motions = False
+    opt.out_length = 3
+    opt.motion_save_dir = "outputs/motion"
     test(opt)
