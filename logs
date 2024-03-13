@@ -1,0 +1,31 @@
+Computing features for input music
+Slicing c:/temp/wavs\Ellie Goulding  Juice WRLD - Hate Me (Lyrics).wav
+Computing features for c:/temp/wavs\Ellie Goulding  Juice WRLD - Hate Me (Lyrics).wav
+Importing jukebox and associated packages...
+Setting up the VQ-VAE...
+  0%|          | 0/73 [00:00<?, ?it/s]Loading vqvae in eval mode
+Setting up the top prior...
+Loading artist IDs from C:\Users\user\anaconda3\envs\edge\Lib\site-packages\jukebox\data/ids/v2_artist_ids.txt
+Loading artist IDs from C:\Users\user\anaconda3\envs\edge\Lib\site-packages\jukebox\data/ids/v2_genre_ids.txt
+Level:2, Cond downsample:None, Raw to tokens:128, Sample length:1048576
+Converting to fp16 params
+Loading prior in eval mode
+Loading the top prior weights into memory...
+  0%|          | 0/872 [00:00<?, ?it/s]
+  0%|          | 1/872 [00:00<05:09,  2.82it/s]
+  2%|▏         | 20/872 [00:00<03:33,  4.00it/s]
+ 38%|███▊      | 331/872 [00:00<01:34,  5.71it/s]
+100%|██████████| 872/872 [00:00<00:00, 1318.94it/s]
+100%|██████████| 669/669 [00:00<00:00, 8947.16it/s]
+100%|██████████| 73/73 [50:44<00:00, 41.71s/it]
+Model has 49464471 parameters
+Generating dances
+sampling loop time step: 100%|██████████| 50/50 [03:45<00:00,  4.50s/it]
+C:\Users\user\PycharmProjects\EDGE\vis.py:194: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+  ax.scatter([], [], [], zorder=10, s=0, cmap=ListedColormap(["r", "g", "b"]))
+MovieWriter ffmpeg unavailable; using Pillow instead.
+'ffmpeg' is not recognized as an internal or external command,
+operable program or batch file.
+Done
+
+ffmpeg -loglevel error -stream_loop 0 -y -i C:\\Users\\user\\AppData\\Local\\Temp\\tmp6t658qz2\\test.gif -i C:\\Users\\user\\AppData\\Local\\Temp\\tmp6t658qz2/tempsound.wav -shortest -c:v libx264 -crf 26 -c:a aac -q:a 4 renders/test_pianos-by-jtwayne-7-174717.mp4

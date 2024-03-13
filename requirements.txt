@@ -1,0 +1,18 @@
+git+https://github.com/rodrigo-castellon/jukemirlib.git
+tqdm>4.29.0
+p_tqdm
+einops
+matplotlib
+wandb
+accelerate
+# wine
+# git+https://github.com/facebookresearch/pytorch3d.git # doesn't work on linux so I've included into repo directly :(
+
+#### pytorch3d deps #####
+imageio
+hydra-core>=1.1
+visdom
+lpips
+matplotlib
+accelerate
+sqlalchemy>=2.0
