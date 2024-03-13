@@ -131,5 +131,5 @@ if __name__ == "__main__":
     # opt.use_cached_features = False
     # opt.save_motions = False
     opt.out_length = 3
-    opt.motion_save_dir = "outputs/motion"
+    opt.motion_save_dir = "outputs"
     test(opt)
